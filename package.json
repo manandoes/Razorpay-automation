@@ -1,0 +1,19 @@
+{
+  "name": "razorpay-webhook-server",
+  "version": "1.0.0",
+  "description": "Razorpay payment webhook server that sends confirmation email (Gmail SMTP) and WhatsApp (Interakt) messages to attendees.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "nodemailer": "^8.0.10"
+  }
+}
