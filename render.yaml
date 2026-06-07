@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: razorpay-webhook-server
+    runtime: node
+    plan: free
+    region: singapore
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      # ── Razorpay ──────────────────────────────────────────────
+      # Secret set when creating the webhook in the Razorpay Dashboard.
+      - key: RAZORPAY_WEBHOOK_SECRET
+        sync: false
+
+      # ── Gmail SMTP ────────────────────────────────────────────
+      - key: GMAIL_USER
+        sync: false
+      - key: GMAIL_APP_PASSWORD
+        sync: false
+
+      # ── WhatsApp (Interakt) ───────────────────────────────────
+      - key: WHATSAPP_API_KEY
+        sync: false
+      - key: WHATSAPP_TEMPLATE_NAME
+        value: payment_confirmation
+      - key: WHATSAPP_TEMPLATE_LANG
+        value: en
+      - key: WHATSAPP_DEFAULT_COUNTRY_CODE
+        value: "+91"
+
+      # ── Branding ──────────────────────────────────────────────
+      - key: EVENT_NAME
+        value: My Event
+      - key: MAIL_FROM_NAME
+        value: Event Team
