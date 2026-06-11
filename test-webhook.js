@@ -12,7 +12,7 @@ const body = JSON.stringify({
         id: 'pay_test123',
         amount: 50000,
         currency: 'INR',
-        email: 'coachyogeshvats.info@gmail.com',
+        email: 'abhinav@talkinglensmedia.com',
         contact: '+919997589540',
         notes: { name: 'Test User' },
       },
