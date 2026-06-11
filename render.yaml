@@ -15,19 +15,19 @@ services:
       - key: RAZORPAY_WEBHOOK_SECRET
         sync: false
 
-      # ── Gmail SMTP ────────────────────────────────────────────
-      - key: GMAIL_USER
+      # ── Brevo SMTP (transactional email) ─────────────────────
+      - key: BREVO_SMTP_USER
         sync: false
-      - key: GMAIL_APP_PASSWORD
+      - key: BREVO_SMTP_PASSWORD
+        sync: false
+      - key: BREVO_FROM_EMAIL
         sync: false
 
-      # ── WhatsApp (Interakt) ───────────────────────────────────
+      # ── WhatsApp (self-hosted bot) ────────────────────────────
+      - key: WHATSAPP_BOT_URL
+        value: http://34.28.139.132/send-message
       - key: WHATSAPP_API_KEY
         sync: false
-      - key: WHATSAPP_TEMPLATE_NAME
-        value: payment_confirmation
-      - key: WHATSAPP_TEMPLATE_LANG
-        value: en
       - key: WHATSAPP_DEFAULT_COUNTRY_CODE
         value: "+91"
 
